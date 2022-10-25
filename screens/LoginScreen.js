@@ -40,7 +40,7 @@ const LoginScreen = () => {
                         />
                     </View>
 
-                    <TouchableOpacity onPress={()=>{}} className="mx-6 mt-3 flex">
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}} className="mx-6 mt-3 flex">
                         <Text className="text-xl text-center  bg-sky-800 text-white pt-4 pb-4">Login</Text>
                     </TouchableOpacity>
                     <Text className="text-center mt-3 text-gray-500 font-medium">Forgot password?</Text>
