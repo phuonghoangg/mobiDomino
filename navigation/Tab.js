@@ -10,6 +10,7 @@ import CartScreen from '../screens/CartScreen';
 import AccountScreen from '../screens/AccountScreen';
 import { useNavigation } from '@react-navigation/native';
 import { HomeIcon,ClipboardDocumentIcon, ShoppingCartIcon, UserCircleIcon } from 'react-native-heroicons/outline';
+import HomeTabNavigator from '../screens/HomeTabNavigator';
 const Tab = createMaterialBottomTabNavigator();
 const MyTab = () => {
     const navigation = useNavigation();
@@ -27,7 +28,7 @@ const MyTab = () => {
         >
             <Tab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeTabNavigator}
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color }) => <HomeIcon name="home" color={color} size={26} />,

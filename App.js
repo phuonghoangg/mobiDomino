@@ -15,7 +15,7 @@ import { useState } from 'react';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [token, setToken] = useState('')
+  const [token, setToken] = useState('ads')
   const  [isLoading,setIsLoading] = useState(false)
 
   if(isLoading){
