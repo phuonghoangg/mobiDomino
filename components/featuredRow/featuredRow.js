@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import { ArrowRightIcon } from 'react-native-heroicons/outline'
 import RestaurantCard from './RestaurantCard'
+import { useNavigation } from '@react-navigation/native'
 const dataProduct = [
   {
     id: 123,
@@ -41,12 +42,12 @@ const dataProduct = [
   }
 ]
 const FeaturedRow = ({ id, title, description, featureCategory }) => {
-  
+    const navigation = useNavigation()
   return (
     <View>
       <View className="flex-row mt-4 items-center justify-between px-4">
         <Text className="font-bold text-lg">{title}</Text>
-        <ArrowRightIcon color="#00CCBB" />
+        <ArrowRightIcon onPress={()=>{navigation.navigate('Menu')}} color="#00CCBB" />
       </View>
       <Text className="text-xs text-gray-500 px-4 font-normal">{description}</Text>
       <ScrollView

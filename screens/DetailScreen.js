@@ -7,10 +7,11 @@ import { RadioButton } from 'react-native-paper';
 const DetailScreen = () => {
     const [checked, setChecked] = useState('');
     const [priceProduct, setPriceProduct] = useState(0)
+    const [chooseSizeType,setChooseSizeType] = useState('')
     const route = useRoute();
     const { data } = route.params
 
-    console.log(priceProduct);
+    console.log(priceProduct,chooseSizeType);
     return (
         <ScrollView >
             <View>
@@ -18,24 +19,24 @@ const DetailScreen = () => {
                     className="w-full h-56 bg-gray-300 p-4" />
             </View>
             <View className="px-2 pt-4">
-                <Text className="text-2xl font-bold">{data.title}</Text>
+                <Text className="text-2xl font-bold text-sky-800">{data.title}</Text>
                 <Text className="text-gray-400 font-normal pt-1 text-lg">{data.short_description}</Text>
-                <Text className="text-gray-400 font-normal pt-2 text-lg">Nguyên liệu: {data.ingredient}</Text>
+                <Text className="text-gray-400 font-normal pt-2 text-lg italic">Nguyên liệu: {data.ingredient}</Text>
 
             </View>
             <View className="px-2 pt-4">
-                <Text className="text-2xl font-bold">Chọn kích thước bánh và loại đế</Text>
+                <Text className="text-2xl font-bold text-sky-800">Chọn kích thước bánh và loại đế</Text>
 
                 {/* Đế nhỏ */}
 
-                <View className="bg-gray-200 border border-gray-100 rounded-lg mt-3 px-3">
+                <View className="bg-gray-200 border border-gray-100 rounded-lg mt-3 px-3 font-bold">
                     <Text className="text-xl font-bold p-2 border-b-2 border-gray-400">Nhỏ</Text>
                     <View className="flex-row justify-between">
                         <View className="flex-row py-2">
                             <RadioButton
                                 value="1"
                                 status={checked === '1' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('1'); setPriceProduct(149000) }}
+                                onPress={() => { setChecked('1'); setPriceProduct(149000);setChooseSizeType('Đế Giòn Xốp') }}
                             />
                             <Text className="pt-1 text-lg ">Đế Giòn Xốp</Text>
                         </View>
@@ -50,7 +51,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="2"
                                 status={checked === '2' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('2'); setPriceProduct(149000) }}
+                                onPress={() => { setChecked('2'); setPriceProduct(149000);setChooseSizeType('Đế Mỏng Giòn')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Mỏng Giòn</Text>
                         </View>
@@ -65,9 +66,9 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="3"
                                 status={checked === '3' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('3'); setPriceProduct(149000) }}
+                                onPress={() => { setChecked('3'); setPriceProduct(149000) ;setChooseSizeType('Đế Kéo Tay Truyền Thống')  }}
                             />
-                            <Text className="pt-1 text-lg ">Đế Kéo tay truyền thống</Text>
+                            <Text className="pt-1 text-lg ">Đế Kéo Tay Truyền Thống</Text>
                         </View>
                         <View className="flex-row">
                             <Text className="pt-1 text-lg py-2">149,000đ</Text>
@@ -84,7 +85,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="4"
                                 status={checked === '4' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('4'); setPriceProduct(239000) }}
+                                onPress={() => { setChecked('4'); setPriceProduct(239000);setChooseSizeType('Đế Giòn Xốp')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Giòn Xốp</Text>
                         </View>
@@ -99,7 +100,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="5"
                                 status={checked === '5' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('5'); setPriceProduct(239000) }}
+                                onPress={() => { setChecked('5'); setPriceProduct(239000);setChooseSizeType('Đế Mỏng Giòn')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Mỏng Giòn</Text>
                         </View>
@@ -114,7 +115,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="6"
                                 status={checked === '6' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('6'); setPriceProduct(239000) }}
+                                onPress={() => { setChecked('6'); setPriceProduct(239000);setChooseSizeType('Đế Kéo Tay Truyền Thống')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Kéo tay truyền thống</Text>
                         </View>
@@ -133,7 +134,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="7"
                                 status={checked === '7' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('7'); setPriceProduct(299000) }}
+                                onPress={() => { setChecked('7'); setPriceProduct(299000);setChooseSizeType('Đế Giòn Xốp')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Giòn Xốp</Text>
                         </View>
@@ -148,7 +149,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="8"
                                 status={checked === '8' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('8'); setPriceProduct(299000) }}
+                                onPress={() => { setChecked('8'); setPriceProduct(299000);setChooseSizeType('Đế Mỏng Giòn')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Mỏng Giòn</Text>
                         </View>
@@ -163,7 +164,7 @@ const DetailScreen = () => {
                             <RadioButton
                                 value="9"
                                 status={checked === '9' ? 'checked' : 'unchecked'}
-                                onPress={() => { setChecked('9'); setPriceProduct(299000) }}
+                                onPress={() => { setChecked('9'); setPriceProduct(299000);setChooseSizeType('Đế Kéo Tay Truyền Thống')  }}
                             />
                             <Text className="pt-1 text-lg ">Đế Kéo tay truyền thống</Text>
                         </View>

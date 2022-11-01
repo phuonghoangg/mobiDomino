@@ -9,7 +9,7 @@ const AppStack = () => {
   return (
     <Stack.Navigator >
         <Stack.Screen name='HomeTab' component={MyTab} />
-        <Stack.Screen name='Details' options={{title:'Tùy chỉnh ',headerTitleAlign:'center'}}  component={DetailScreen} />
+        <Stack.Screen name='Details' options={{title:'Tùy chỉnh ',headerTitleAlign:'center',}}  component={DetailScreen} />
     </Stack.Navigator>
   )
 }
