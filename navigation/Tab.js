@@ -10,7 +10,7 @@ import CartScreen from '../screens/CartScreen';
 import AccountScreen from '../screens/AccountScreen';
 import { useNavigation } from '@react-navigation/native';
 import { HomeIcon,ClipboardDocumentIcon, ShoppingCartIcon, UserCircleIcon } from 'react-native-heroicons/outline';
-import HomeTabNavigator from '../screens/HomeTabNavigator';
+import HomeTabNavigator from './HomeTabNavigator';
 const Tab = createMaterialBottomTabNavigator();
 const MyTab = () => {
     const navigation = useNavigation();
@@ -44,7 +44,7 @@ const MyTab = () => {
             />
             <Tab.Screen
                 name="Cart"
-                component={MenuScreen}
+                component={CartScreen}
                 options={{
                     tabBarLabel: 'Cart',
                     tabBarIcon: ({ color }) => <ShoppingCartIcon name="cart" color={color} size={26} />,

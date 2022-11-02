@@ -6,6 +6,7 @@ import BasketIcon from '../components/basketIcon/BasketIcon';
 
 
 const DetailScreen = () => {
+
     const [checked, setChecked] = useState('');
     const [priceProduct, setPriceProduct] = useState(0)
     const [chooseSizeType,setChooseSizeType] = useState('')

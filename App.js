@@ -10,12 +10,10 @@ import AuthStack from './navigation/AuthStack';
 import { useState } from 'react';
 
 
-
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [token, setToken] = useState('ads')
+  const [token, setToken] = useState('zxc')
   const  [isLoading,setIsLoading] = useState(false)
 
   if(isLoading){

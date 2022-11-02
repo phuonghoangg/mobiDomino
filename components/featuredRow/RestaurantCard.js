@@ -7,11 +7,11 @@ const RestaurantCard = ({data}) => {
     const navigation = useNavigation();
     
   return (
-    <TouchableOpacity className="bg-white mr-3 shadow " onPress={()=>{navigation.navigate('Details',{
+    <TouchableOpacity className="bg-white mr-3 shadow mt-2 rounded-lg" onPress={()=>{navigation.navigate('Details',{
        data
     })}}>
         <Image source={{uri:data?.imgUrl}}
-            className="h-36 w-50 rounded-sm"
+            className="h-36 w-50 rounded-t-lg"
         />
         <View className="px-3 pb-4">
             <Text style={{width:150}} className="font-bold text-lg pt-2">{data?.title}</Text>

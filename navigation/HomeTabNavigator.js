@@ -1,12 +1,12 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
-import OnboardingScreen from './OnboardingScreen'
-import LoginScreen from './LoginScreen'
-import RegisterScreen from './RegisterScreen'
+import OnboardingScreen from '../screens/OnboardingScreen'
+import LoginScreen from '../screens/LoginScreen'
+import RegisterScreen from '../screens/RegisterScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import HomeScreen from './homeScreen'
-import BookTableScreen from './BookTableScreen'
-import DetailScreen from './DetailScreen'
+import HomeScreen from '../screens/homeScreen'
+import BookTableScreen from '../screens/BookTableScreen'
+import DetailScreen from '../screens/DetailScreen'
 
 const Stack = createNativeStackNavigator();
 
