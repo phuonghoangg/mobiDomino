@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
 
@@ -12,7 +12,7 @@ const BookTableScreen = () => {
                     <View className="flex-row pt-2">
                         <TouchableOpacity onPress={() => { navigation.navigate('HomeScreen',{
                             numberTable:"1"
-                        }) }} className="rounded-md w-20 h-20 items-center justify-center bg-slate-400 mx-2">
+                        })}} className="rounded-md w-20 h-20 items-center justify-center bg-slate-400 mx-2">
                             <Text className="text-xl opacity-40">Bàn 1</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => { navigation.navigate('HomeScreen',{
