@@ -1,16 +1,30 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AtSymbolIcon } from 'react-native-heroicons/outline';
+
+// import { loginUser } from '../redux/apiRequest';
 const LoginScreen = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
     const navigation = useNavigation();
+
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false,
         });
     }, []);
 
+    const handleLogin = async() => {
+        const newUser = {
+            email,password
+        }
+        // await loginUser(newUser)
+        console.log(newUser);
+        navigation.goBack()
+    }
     return (
         <SafeAreaView className="flex-1 bg-white ">
             <View className="px-3 flex-1 justify-around">
@@ -26,13 +40,14 @@ const LoginScreen = () => {
 
                 <View>
                     <View className="mx-6">
-                        <Text className="text-gray-500 pb-2">Username</Text>
-                        <TextInput className=" mb-2 p-4 border font-medium border-gray-300" placeholder="Enter your username" />
+                        <Text className="text-gray-500 pb-2">Email</Text>
+                        <TextInput onChangeText={(e) => setEmail(e)} className=" mb-2 p-4 border font-medium border-gray-300" placeholder="Enter your Email" />
                     </View>
 
                     <View className="mx-6">
                         <Text className="text-gray-500 pb-2 ">Password</Text>
                         <TextInput
+                            onChangeText={(e) => setPassword(e)}
                             className="mb-2 p-4 border border-gray-300 font-medium"
                             keyboardType="password"
                             placeholder="Enter your password"
@@ -40,15 +55,15 @@ const LoginScreen = () => {
                         />
                     </View>
 
-                    <TouchableOpacity onPress={()=>{navigation.goBack()}} className="mx-6 mt-3 flex">
+                    <TouchableOpacity onPress={handleLogin} className="mx-6 mt-3 flex">
                         <Text className="text-xl text-center  bg-sky-800 text-white pt-4 pb-4">Login</Text>
                     </TouchableOpacity>
                     <Text className="text-center mt-3 text-gray-500 font-medium">Forgot password?</Text>
                 </View>
 
                 <SafeAreaView>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Register')}}>
-                            <Text className="text-center font-bold text-sky-800 text-xl">Create Account</Text>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
+                        <Text className="text-center font-bold text-sky-800 text-xl">Create Account</Text>
                     </TouchableOpacity >
                 </SafeAreaView>
             </View>
